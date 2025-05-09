@@ -5,15 +5,14 @@ include "includes/databaseConn.inc.php";
 include "includes/designs.inc.php";
 include "includes/deleteDesigns.inc.php";
 include "includes/uploadDesigns.inc.php";
+include("includes/login.inc.php");
 
 
-if(isset($_POST["logOut"])){
-    session_destroy();
-    header("location: login.php");
-    exit();
-}
 
-if(isset($_SESSION['user_id']) && isset($_SESSION['username'])){
+include("includes/signout.inc.php");
+
+
+if (isLoggedIn()){
 ?>
 <!DOCTYPE html>
 <html lang="en">

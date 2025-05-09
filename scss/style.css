@@ -89,34 +89,53 @@ header a {
   text-decoration: none;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 800px) {
+  header {
+    position: relative;
+    z-index: 10;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 0;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #dbdbdb;
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
   .nav-links ul {
-    flex-direction: column;
-    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-links ul li {
+    margin: 10px 0;
   }
   .nav-links.active {
     display: flex;
   }
+  .nav-links + .nav-links {
+    margin-top: 0;
+  }
+  .nav-links:nth-child(2) {
+    margin-top: 80px;
+  }
   #burger {
     display: block;
-  }
-  .designMore {
-    flex-direction: column;
-  }
-  .designMore section {
-    width: 100%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    fill: #000;
+    margin-left: auto;
   }
 }
 main {
@@ -459,6 +478,11 @@ main .container section:nth-child(2) a:hover {
   pointer-events: auto;
 }
 
+@media (max-width: 800px) {
+  .container2 {
+    padding-top: 80px;
+  }
+}
 .designMore {
   width: 100%;
   min-height: 100vh;
@@ -466,18 +490,19 @@ main .container section:nth-child(2) a:hover {
   justify-content: center;
   align-items: center;
   padding: 120px 0px;
+  position: relative;
 }
-.designMore section {
+.designMore .designMore-item {
   width: 100%;
-  height: 600px;
+  min-height: 600px;
 }
-.designMore section:nth-child(2) {
+.designMore .designMore-item:nth-child(2) {
   padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.designMore section:nth-child(2) h2 {
+.designMore .designMore-item:nth-child(2) h2 {
   text-transform: capitalize;
   padding: 20px 0px;
   font-size: 34px;
@@ -485,7 +510,7 @@ main .container section:nth-child(2) a:hover {
   white-space: wrap;
   word-break: break-word;
 }
-.designMore section:nth-child(2) h2::after {
+.designMore .designMore-item:nth-child(2) h2::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -495,7 +520,7 @@ main .container section:nth-child(2) a:hover {
   border-radius: 10px;
   background-color: #010818;
 }
-.designMore section:nth-child(2) p {
+.designMore .designMore-item:nth-child(2) p {
   padding-top: 10px;
   font-size: 18px;
   color: #363636;
@@ -513,6 +538,24 @@ main .container section:nth-child(2) a:hover {
   border-radius: 10px;
 }
 
+@media (max-width: 1000px) {
+  .designMore {
+    flex-direction: column;
+    padding: 0;
+    padding-bottom: 40px;
+  }
+  .designMore .designMore-item:nth-child(2) {
+    text-align: center;
+    padding-bottom: 120px;
+    margin-bottom: 20px;
+  }
+  .designMore .designMore-item:nth-child(2) h2 {
+    padding: 40px 0px;
+  }
+  .designMore .designMore-item:nth-child(2) h2::after {
+    width: 100%;
+  }
+}
 .logIn {
   width: 100%;
   height: 100vh;
@@ -653,4 +696,65 @@ footer a:hover {
 }
 footer a:hover::after {
   width: 100%;
+}
+
+.contact {
+  max-width: 600px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.contact h1 {
+  font-size: 30px;
+  color: #3B82F6;
+  margin-bottom: 15px;
+}
+.contact p {
+  font-size: 20px;
+  color: #494f5b;
+  margin-bottom: 40px;
+}
+.contact .contact-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.contact .contact-options .contact-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #6366F1;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  width: 80%;
+  max-width: 400px;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+.contact .contact-options .contact-box i {
+  font-size: 24px;
+}
+.contact .contact-options .contact-box span {
+  font-weight: 500;
+}
+.contact .contact-options .contact-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+.contact .contact-options .contact-box.viber {
+  background-color: #7360f2;
+}
+.contact .contact-options .contact-box.whatsapp {
+  background-color: #25d366;
+}
+.contact .contact-options .contact-box.messenger {
+  background-color: #0084ff;
 }/*# sourceMappingURL=style.css.map */

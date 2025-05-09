@@ -39,19 +39,18 @@ if (isset($_SESSION["drawing_id"])) {
             <?php include("header.php"); ?>
 
             <div class="designMore">
-                <section>
+                <section class="designMore-item">
                     <!-- Display the design image -->
                     <img src="<?php echo $result["drawing_image"]; ?>" alt="">
                 </section>
-                <section>
+                <section class="designMore-item">
                     <!-- Display the design title -->
                     <h2><?php echo $result["drawing_title"]; ?></h2> 
                     <!-- Display the design description -->
                     <p><?php echo nl2br($result["drawing_descriotion"]); ?></p>
                 </section>
-
+                <?php include("footer.php");?>
             </div>
-         <?php include("footer.php");?>
 
         </body>
         </html>

@@ -38,21 +38,19 @@ if (isset($_SESSION["design_id"])) {
         </head>
         <body>
             <?php include("header.php"); ?>
-
-            <div class="designMore">
-                <section>
-                    <!-- Display the design image -->
-                    <img src="<?php echo $result["design_image"]; ?>" alt="">
-                </section>
-                <section>
-                    <!-- Display the design title -->
-                    <h2><?php echo $result["design_title"]; ?></h2> 
-                    <!-- Display the design description -->
-                    <p><?php echo nl2br($result["design_descriotion"]); ?></p>
-                </section>
-            </div>
-            <?php include("footer.php");?>
-
+                <div class="designMore">
+                    <section class="designMore-item">
+                        <!-- Display the design image -->
+                        <img src="<?php echo $result["design_image"]; ?>" alt="">
+                    </section>
+                    <section class="designMore-item">
+                        <!-- Display the design title -->
+                        <h2><?php echo $result["design_title"]; ?></h2> 
+                        <!-- Display the design description -->
+                        <p><?php echo nl2br($result["design_descriotion"]); ?></p>
+                    </section>
+                    <?php include("footer.php");?>                
+                </div>
         </body>
         </html>
         <?php

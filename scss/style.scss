@@ -42,7 +42,7 @@ header {
         cursor: pointer;
         fill: black;
     }
-  
+
       .logo {
         h2 {
           font-size: $font-xl;
@@ -122,39 +122,61 @@ header {
     }
   }
   
-  @media (max-width: 850px) {
+@media (max-width: 800px) {
+    header {
+      position: relative;
+      z-index: 10;
+    }
+  
+    nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
     .nav-links {
       display: none;
       flex-direction: column;
-      gap: 10px;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px 0;
       position: absolute;
-      top: 100%;
+      top: 100%; // show right under header
       left: 0;
       width: 100%;
-      background-color: $background-color;
-      padding: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-
+      
       ul {
-        flex-direction: column;
-        gap: 15px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+  
+        li {
+          margin: 10px 0;
+        }
       }
-
+  
       &.active {
         display: flex;
       }
     }
-
+  
+    .nav-links + .nav-links {
+      margin-top: 0;
+    }
+    .nav-links:nth-child(2){
+      margin-top: 80px;
+    }
     #burger {
       display: block;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      fill: #000;
+      margin-left: auto;
     }
-    .designMore{
-        flex-direction: column;
-    }
-    .designMore section{
-        width: 100%;
-    }
-  }
+}
 main{
     width: 100%;
     min-height: 100vh;
@@ -512,7 +534,12 @@ main{
       }
     }
 }
-  
+@media (max-width: 800px){
+  .container2{
+    padding-top: 80px;
+  }
+}
+
 .designMore{
     width: 100%;
     min-height: 100vh;
@@ -520,11 +547,12 @@ main{
     justify-content: center;
     align-items: center;
     padding: 120px 0px;
-    section{
+    position: relative;
+    .designMore-item{
         width: 100%;
-        height: 600px;
+        min-height: 600px;
     }
-    section:nth-child(2){
+    .designMore-item:nth-child(2){
         padding: 40px;
         display: flex;
         flex-direction: column;
@@ -565,6 +593,24 @@ main{
         height: 600px;
         border-radius: 10px;
     }
+}
+@media (max-width: 1000px){
+  .designMore{
+    flex-direction: column;
+    padding: 0;
+    padding-bottom: 40px;
+  }
+  .designMore .designMore-item:nth-child(2){
+    text-align: center;
+    padding-bottom: 120px;
+    margin-bottom: 20px;
+    h2{
+      padding: 40px 0px;
+      &::after{
+        width: 100%;
+      }
+    }
+  }
 }
 
 .logIn{
@@ -726,4 +772,74 @@ footer{
             }
           }
 
+}
+.contact {
+  max-width: 600px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  h1 {
+    font-size: $font-xxl;
+    color: $primary-color;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: $font-m;
+    color: $text-secondary-color;
+    margin-bottom: 40px;
+  }
+
+  .contact-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .contact-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: $secondary-color;
+      color: #fff;
+      text-decoration: none;
+      font-size: $font-m;
+      padding: 14px 28px;
+      border-radius: 50px;
+      width: 80%;
+      max-width: 400px;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+
+      i {
+        font-size: $font-l;
+      }
+
+      span {
+        font-weight: 500;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+      }
+
+      &.viber {
+        background-color: #7360f2;
+      }
+
+      &.whatsapp {
+        background-color: #25d366;
+      }
+
+      &.messenger {
+        background-color: #0084ff;
+      }
+    }
+  }
 }

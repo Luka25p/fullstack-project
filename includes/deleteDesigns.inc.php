@@ -3,7 +3,6 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["delete"])) {
     $delete_id = $_POST["design_id"];
 
-    // First, delete the image file from the server
     $stmt = $pdo->prepare("SELECT design_image FROM design WHERE design_id = :id");
     $stmt->execute([
         'id' => $delete_id
@@ -12,10 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["delete"])) {
     $row = $stmt->fetch();
 
     if ($row && file_exists($row['design_image'])) {
-        unlink($row['design_image']); // Delete image file
+        unlink($row['design_image']);
     }
 
-    // Now delete the record from DB
     $stmt = $pdo->prepare("DELETE FROM design WHERE design_id = :id");
     $stmt->execute([':id' => $delete_id]);
 

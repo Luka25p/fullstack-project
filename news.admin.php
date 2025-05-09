@@ -5,13 +5,12 @@ include "includes/databaseConn.inc.php";
 include "includes/news.inc.php";
 include "includes/deletePost.inc.php";
 include "includes/uploadPost.inc.php";
-if(isset($_POST["logOut"])){
-    session_destroy();
-    header("location: login.php");
-    exit();
-}
+include("includes/signout.inc.php");
+include("includes/login.inc.php");
 
-if(isset($_SESSION['user_id']) && isset($_SESSION['username'])){
+
+
+if (isLoggedIn()){
 
 ?>
 <!DOCTYPE html>

@@ -9,14 +9,18 @@
       </h2>
     </div>
 
-    <!-- Navigation Links -->
+    <!-- Navigation Links - Grouped -->
+    <div class="nav-links">
+      <ul>
+        <li><a href="news.php" class="news">news</a></li>
+        <li><a href="drawings.php">drawings</a></li>
+        <li><a href="designs.php">designs</a></li>        
+      </ul>
+    </div>
     <div class="nav-links">
       <ul>
         <li><a href="index.php">home</a></li>
-        <li><a href="news.php" class="news">news</a></li>
-        <li><a href="drawings.php">drawings</a></li>
-        <li><a href="designs.php">designs</a></li>
-        <li><a href="">contact</a></li>
+        <li><a href="contact.php">contact</a></li>
       </ul>
     </div>
 
