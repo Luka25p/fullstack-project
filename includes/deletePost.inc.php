@@ -1,0 +1,24 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["delete"])) {
+    $delete_id = $_POST["news_id"];
+
+    // First, delete the image file from the server
+    $stmt = $pdo->prepare("SELECT news_image FROM news WHERE news_id = :id");
+    $stmt->execute([
+        'id' => $delete_id
+    ]);
+
+    $row = $stmt->fetch();
+
+    if ($row && file_exists($row['news_image'])) {
+        unlink($row['news_image']); // Delete image file
+    }
+
+    // Now delete the record from DB
+    $stmt = $pdo->prepare("DELETE FROM news WHERE news_id = :id");
+    $stmt->execute([':id' => $delete_id]);
+
+    header("location: ./news.admin.php");
+    exit();
+}
