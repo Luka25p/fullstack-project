@@ -3,7 +3,6 @@ session_start();
 
 include("includes/databaseConn.inc.php");
 include("includes/designs.inc.php");
-include("includes/designsMore.inc.php");
 
 
 
@@ -20,6 +19,8 @@ if (isset($_POST["designm"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>silhouette | design</title>
+    <link rel="icon" href="images/icon.ico" type="image/png">
+
         <!-- google font lato -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +49,8 @@ if (isset($_POST["designm"])) {
             </div>
             <?php endforeach;?>
         </div>
+    <?php include("footer.php");?>
+
     </div>
 </body>
 </html>

@@ -21,6 +21,7 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['username'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>drawing | admin</title>
+    <link rel="icon" href="images/icon.ico" type="image/png">
     <link rel="stylesheet" href="scss/style.css">
     <link rel="stylesheet" href="scss/reset.css">
 </head>

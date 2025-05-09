@@ -25,6 +25,9 @@ if (isset($_SESSION["design_id"])) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Design Details</title>
+
+            <link rel="icon" href="images/icon.ico" type="image/png">
+
             <!-- google font lato -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +51,7 @@ if (isset($_SESSION["design_id"])) {
                     <p><?php echo nl2br($result["design_descriotion"]); ?></p>
                 </section>
             </div>
+            <?php include("footer.php");?>
 
         </body>
         </html>

@@ -9,7 +9,8 @@ include("includes/login.inc.php");
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>silhouette</title>
+    <title>silhouette | login</title>
+    <link rel="icon" href="images/icon.ico" type="image/png">
 
     <!-- google font lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +38,6 @@ include("includes/login.inc.php");
     </form>
     </div>
 
-
+        <script src="loginValidaton.js"></script>
 </body>
 </html>

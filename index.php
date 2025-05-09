@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>silhouette</title>
+    <link rel="icon" href="images/icon.ico" type="image/png">
 
     <!-- google font lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +33,5 @@
             </section>
         </div>
     </main>
-
 </body>
 </html>
