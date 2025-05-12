@@ -4,19 +4,15 @@ session_start();
 include("includes/databaseConn.inc.php");
 
 if (isset($_SESSION["design_id"])) {
-    // Get the design_id from the session
     $design_id = $_SESSION["design_id"];
 
-    // Fetch the specific design data based on the session's design_id
     $sql = "SELECT * FROM design WHERE design_id = :design_id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':design_id', $design_id, PDO::PARAM_INT);
     $stmt->execute();
 
-    // Fetch the result
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Check if the result was found
     if ($result) {
         ?>
         <!DOCTYPE html>

@@ -472,6 +472,7 @@ main .container section:nth-child(2) a:hover {
 }
 .container2 .column .img-wrapper .overlay:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 .container2 .column .img-wrapper:hover .overlay {
   opacity: 1;
@@ -495,6 +496,13 @@ main .container section:nth-child(2) a:hover {
 .designMore .designMore-item {
   width: 100%;
   min-height: 600px;
+}
+.designMore .designMore-item img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 600px;
+  border-radius: 10px;
 }
 .designMore .designMore-item:nth-child(2) {
   padding: 40px;
@@ -529,13 +537,6 @@ main .container section:nth-child(2) a:hover {
   word-break: break-word;
   overflow-wrap: break-word;
   line-height: 30px;
-}
-.designMore img {
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  height: 600px;
-  border-radius: 10px;
 }
 
 @media (max-width: 1000px) {
@@ -679,6 +680,12 @@ footer a {
   color: #dbdbdb;
   text-decoration: none;
   transition: color 0.3s ease;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+footer a .footer-icon {
+  width: 15px;
 }
 footer a::after {
   content: "";
@@ -698,32 +705,39 @@ footer a:hover::after {
   width: 100%;
 }
 
-.contact {
+.contact-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+.contact-container .contact {
   max-width: 600px;
-  margin: 80px auto;
   background: #fff;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-.contact h1 {
+.contact-container .contact h1 {
   font-size: 30px;
-  color: #3B82F6;
+  color: #2a5298;
   margin-bottom: 15px;
 }
-.contact p {
+.contact-container .contact p {
   font-size: 20px;
   color: #494f5b;
   margin-bottom: 40px;
 }
-.contact .contact-options {
+.contact-container .contact .contact-options {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
-.contact .contact-options .contact-box {
+.contact-container .contact .contact-options .contact-box {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -739,22 +753,22 @@ footer a:hover::after {
   transition: all 0.3s ease;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
-.contact .contact-options .contact-box i {
+.contact-container .contact .contact-options .contact-box i {
   font-size: 24px;
 }
-.contact .contact-options .contact-box span {
+.contact-container .contact .contact-options .contact-box span {
   font-weight: 500;
 }
-.contact .contact-options .contact-box:hover {
+.contact-container .contact .contact-options .contact-box:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
 }
-.contact .contact-options .contact-box.viber {
+.contact-container .contact .contact-options .contact-box.viber {
   background-color: #7360f2;
 }
-.contact .contact-options .contact-box.whatsapp {
+.contact-container .contact .contact-options .contact-box.whatsapp {
   background-color: #25d366;
 }
-.contact .contact-options .contact-box.messenger {
+.contact-container .contact .contact-options .contact-box.messenger {
   background-color: #0084ff;
 }/*# sourceMappingURL=style.css.map */

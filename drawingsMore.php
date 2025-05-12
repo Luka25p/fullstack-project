@@ -1,23 +1,24 @@
 <?php
 session_start();
-define("BASE_URL", "/app/");
 
 include("includes/databaseConn.inc.php");
 
+
+
+
 if (isset($_SESSION["drawing_id"])) {
-    // Get the design_id from the session
     $drawing_id = $_SESSION["drawing_id"];
 
-    // Fetch the specific design data based on the session's design_id
+    $_GET['id'] = $_SESSION["drawing_id"];
+
+
     $sql = "SELECT * FROM drawing WHERE drawing_id = :drawing_id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':drawing_id', $drawing_id, PDO::PARAM_INT);
     $stmt->execute();
 
-    // Fetch the result
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Check if the result was found
     if ($result) {
         ?>
         <!DOCTYPE html>

@@ -9,7 +9,9 @@ include("includes/drawings.inc.php");
 
 if (isset($_POST["drawingm"])) {
     $_SESSION['drawing_id'] = $_POST['drawing_id'];
-    header("location: ./drawingsMore.php");
+    $drawing_name = $_SESSION["drawing_title"];
+    $drawing_id = $_SESSION['drawing_id'];
+    header("location: drawingsMore?id=$drawing_id&name=$drawing_name");
     exit();
 }
 ?>
@@ -35,7 +37,8 @@ if (isset($_POST["drawingm"])) {
     <div class="container2">
         <div class="column">
             <?php foreach($result as $row):
-                $_SESSION["drawing_id"] = $row["drawing_id"]?>
+                $_SESSION["drawing_id"] = $row["drawing_id"];
+                $_SESSION["drawing_title"] = $row["drawing_title"]?>
             <div class="img-wrapper">
                 <img src="<?php echo $row["drawing_image"];?>" alt="">
                 <form action="drawings.php" method="post">

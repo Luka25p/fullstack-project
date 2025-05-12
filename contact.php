@@ -17,7 +17,7 @@
 </head>
 <body>
     <?php include("header.php");?>
-    <main>
+    <div class="contact-container">
         <div class="contact">
             <h1>Contact</h1>
             <p>Choose your preferred method to reach out:</p>
@@ -36,8 +36,8 @@
                 </a>
             </div>
         </div>
-    </main>
-   
     <?php include("footer.php")?>
+    </div>
+   
 </body>
 </html>

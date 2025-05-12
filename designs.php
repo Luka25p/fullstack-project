@@ -9,7 +9,9 @@ include("includes/designs.inc.php");
 if (isset($_POST["designm"])) {
     $_SESSION['design_id'] = $_POST['design_id'];
 
-    header("location: ./designsMore.php");
+    $design_name = $_SESSION["design_title"];
+    $design_id = $_SESSION['design_id'];
+    header("location: designsMore?id=$design_id&name=$design_name");
     exit();
 }
 ?>
@@ -34,12 +36,10 @@ if (isset($_POST["designm"])) {
 
     <div class="container2">
         <div class="column">
-            <!-- <div class="img-wrapper">
-                <img src="images/img1.jpg" alt="">
-                <a href="#" class="overlay">Read more</a>
-            </div> -->
+
             <?php foreach($result as $row):
-                $_SESSION["design_id"] = $row["design_id"]?>
+                $_SESSION["design_id"] = $row["design_id"];
+                $_SESSION["design_title"] = $row["design_title"];?>
             <div class="img-wrapper">
                 <img src="<?php echo $row["design_image"];?>" alt="">
                 <form action="designs.php" method="post">
