@@ -1,0 +1,104 @@
+@use 'variables.scss' as *;
+
+main{
+    form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        gap: 20px;
+        width: 500px;
+        padding: 60px 0px;
+        h2{
+            font-size: 35px;
+            color: $fc-light;
+            text-align: center;
+        }
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            input{
+                font-size: $fz-m;
+                padding: 5px 20px;
+                border-radius: 10px 10px 0px 0px;
+                border: 1px solid $border-light;
+                background-color: transparent;
+                color: $fc-light;
+            }
+            textarea{
+                font-size: $fz-sm;
+                padding: 10px 20px;
+                border-radius: 0px 0px 10px 10px;
+                resize: none;
+                min-height: 120px;
+                border: 1px solid $border-light;
+                background-color: transparent;
+                color: $fc-light;
+                scrollbar-width: thin;
+                scrollbar-color: $fc-light transparent;
+            }
+        }
+        button{
+            cursor: pointer;
+            padding: 10px 60px;
+            width: fit-content;
+            border-radius: $border-r;
+            font-size: $fz-sm;
+            color: $fc-light;
+            background-color: transparent;
+            border: 1px solid $border-light;
+            transition: .3s ease-in-out;
+            &:hover{
+                background-color: $fc-light;
+                color: $fc-dark;
+            }
+        }
+        .remember{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+.communityPosts{
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        section{
+            display: flex;
+            flex-direction: column;
+            border-radius: $border-r;
+            padding: 40px;
+            gap: 20px;
+            width: 60%;
+            color: $fc-light;
+            -webkit-box-shadow: 8px 8px 24px -16px rgba(20, 20, 20, 1);
+            -moz-box-shadow: 8px 8px 24px -16px rgba(20, 20, 20, 1);
+            box-shadow: 8px 8px 24px -16px rgba(20, 20, 20, 1);
+            background: #1B1B1B;
+            background: linear-gradient(321deg, rgb(18, 18, 18) 40%, rgba(26, 26, 26, 1) 100%); 
+            h2{
+                width: fit-content;
+            }
+            .user{
+                background-color: rgb(66, 76, 103);
+                width: fit-content;
+                padding: 2px 20px;
+                border-radius: $border-r;
+                color: $fc-light;
+            }
+            p{
+                color: rgb(155, 155, 155);
+            }
+            span{
+                width: 100%;
+                text-align: end;
+                font-size: $fz-sm;
+                color: rgb(139, 139, 139);
+            }
+        }
+    }

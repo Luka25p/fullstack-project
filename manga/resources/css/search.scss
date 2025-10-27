@@ -1,0 +1,68 @@
+@use 'variables.scss' as *;
+
+
+.search-form {
+        display: flex;
+        width: 100%;
+        padding: 40px 0px;
+        justify-content: space-between;
+        width: 90%;
+        section{
+            display: flex;
+            width: 600px;
+        }
+        input {
+            background-color: transparent;
+            border: 1px solid $border-light;
+            font-size: $fz-m;
+            padding: 5px 20px;
+            color: $fc-light;
+        }
+        input[type='search'] {
+            width: 100%;
+            border-radius: 20px 0 0 20px;
+            -webkit-appearance: textfield;
+            appearance: textfield;
+            outline-offset: -2px;
+            border-right: none;
+
+            /* remove the 'x' clear button */
+            &::-webkit-search-cancel-button {
+                -webkit-appearance: none;
+                appearance: none;
+            }
+        }
+        input[type='submit'] {
+            border-radius: 0 20px 20px 0;
+            border-left: none;
+            cursor: pointer;
+        }
+        ul{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            li{
+                text-transform: uppercase;
+                font-size: $fz-s;
+                letter-spacing: .2px;
+                a{
+                    color: var(--fc-light);
+                    transition: .3s ease-in-out;
+                }
+            }
+        }
+        ul:nth-child(3){
+            li{
+                border: 1px solid $border-light;
+                padding: 8px;
+                border-radius: $border-r;
+                cursor: pointer;
+                &:hover{
+                    a{
+                        color: $fc-dark;
+                    }
+                    background-color: $bc-color-light;
+                }
+            }
+        }
+    }

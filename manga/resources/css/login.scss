@@ -1,0 +1,65 @@
+@use 'variables.scss' as *;
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: $fc-light;
+    h2{
+        font-size: 54px;
+        color: rgb(232, 232, 232);
+    }
+    form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        gap: 20px;
+        width: 500px;
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            label{
+                font-size: $fz-sm;
+            }
+            input{
+                font-size: $fz-l;
+                padding: 5px 20px;
+                border-radius: $border-r;
+            }
+        }
+        button{
+            cursor: pointer;
+            padding: 10px 60px;
+            width: fit-content;
+            border-radius: $border-r;
+            font-size: $fz-sm;
+            color: $fc-light;
+            background-color: transparent;
+            border: 1px solid $border-light;
+            transition: .3s ease-in-out;
+            &:hover{
+                background-color: $fc-light;
+                color: $fc-dark;
+            }
+        }
+        .remember{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+    .btn-google {
+        background: #4285F4;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .btn-google:hover {
+        background: #357ae8;
+    }

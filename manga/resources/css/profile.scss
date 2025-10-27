@@ -1,0 +1,387 @@
+    @use 'variables.scss' as *;
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .profile-info{
+        color: $fc-light;
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        align-items: center;
+        height: 110px;
+        button{
+            background-color: transparent;
+            border: 1px solid $border-light;
+            border-radius: $border-r;
+            font-size: $fz-sm;
+            padding: 4px 20px;
+            cursor: pointer;
+            color: $fc-light;
+            transition: .3s ease-in-out;
+            &:hover{
+                background-color: $fc-light;
+                color: $fc-dark;
+            }
+        }
+        .profile-info-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            background-color: $bc-color;
+            height: 100%;
+            padding: 50px;
+            padding-left: 100px;
+            border-radius: 0px 0px 0px 70px;
+            width: 80%;     
+        }
+    }
+    .profile-info-container section:nth-child(1){
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        img{ width: 40px; height: 40px; border-radius: $border-r;}
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
+            font-size: $fz-sm;
+            a{color: $fc-light;}
+            p{
+                background-color: rgb(66, 76, 103);
+                padding: 0px 10px;
+                border-radius: 10px;
+            }
+        }
+    }
+    .profile-info-container section:nth-child(2){
+        a{
+        font-size: $fz-l;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $fc-light;
+        border: 1px solid $border-light;
+        width: 25px;
+        height: 25px;
+        border-radius: $border-r;
+        position: relative;
+        transition: .3s ease-in-out;
+        &:hover{
+            background-color: $fc-light;
+            color: $fc-dark;
+        }
+    }
+    }
+    .profile-info-container section:nth-child(3){
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        a{
+            width: 10px;
+            height: 20px;
+            .fa-bookmark{
+                color: rgb(239, 177, 62);
+            }
+        }
+        #notification{
+            padding: 0;
+            border: none;
+            display: flex;
+            align-items: start;
+            span{
+                font-size: 8px;
+            }
+            &:hover{
+                background-color: transparent;
+                color: #ffc266;
+            }
+        }
+    }
+    h2{
+        color: $fc-light;
+        padding: 20px 00px;
+        width: 90%;
+        text-transform: uppercase;
+        letter-spacing: 0.2px;
+    }
+    .logout-form{
+        margin: 0px;
+        width: fit-content;
+        padding: 0px 20px;
+    }
+    .posts{
+        display: flex;
+        width: 90%;
+        min-height: 100vh;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        section{
+            display: flex;
+            flex-direction: column;
+            border-radius: $border-r;
+            padding: 40px;
+            gap: 20px;
+            width: 60%;
+            color: $fc-light;
+            -webkit-box-shadow: 8px 8px 24px -16px rgba(20, 20, 20, 1);
+            -moz-box-shadow: 8px 8px 24px -16px rgba(20, 20, 20, 1);
+            box-shadow: 8px 8px 24px -16px rgba(20, 20, 20, 1);
+            background: #1B1B1B;
+            background: linear-gradient(321deg, rgb(18, 18, 18) 40%, rgba(26, 26, 26, 1) 100%); 
+            img{
+                width: 100%;
+                border-radius: $border-r;
+            }
+            h2{
+                width: fit-content;
+            }
+            button{
+               background-color: transparent;
+               color: $fc-light;
+               font-size: 19px;
+               cursor: pointer;
+               width: fit-content;
+            }
+            div{
+               display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+    .leftsection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 200px;
+        height: 590px;
+        background-color: var(--lighter-2);
+        border-radius: 0px 0px 70px 0px;
+        color: $fc-light;
+        gap: 20px;
+        .infospans{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: $fz-m;
+            gap: 10px;
+            background-color: transparent;
+            cursor: pointer;
+            color: $fc-light;
+        }
+    }
+    .following-card{
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+        section{
+            width: 400px;
+            height: 500px;
+            background-color: rgb(47, 47, 47);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            z-index: 3;
+            border-radius: 20px;
+            gap: 20px;
+            padding: 20px;
+
+            h2{
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.261);
+            }
+            a{
+                color: $fc-light;
+            }
+            ul{
+                width: 100%;
+                text-align: start;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                overflow-y: auto;
+                scrollbar-color: $fc-light transparent ;
+                scrollbar-width: thin;
+                padding-right: 20px;
+                li:first-child{
+                    border: none;
+                }
+                li{
+                    border-top: 1px solid $border-light;
+                    padding: 20px 0px ;
+                }
+            }
+        }
+        .filter{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color: #1b1b1b40;
+            backdrop-filter: blur(1px);
+        }
+    }
+    .followers-card{
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+        section{
+            width: 500px;
+            height: 500px;
+            background-color: rgb(47, 47, 47);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            z-index: 3;
+            border-radius: 20px;
+            gap: 20px;
+            padding: 20px;
+            a{
+                color: $fc-light;
+            }
+            h2{
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.261);
+            }
+            ul{
+                width: 100%;
+                text-align: start;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                overflow-y: auto;
+                scrollbar-color: $fc-light transparent ;
+                scrollbar-width: thin;
+                padding-right: 20px;
+                li:first-child{
+                    border: none;
+                }
+                li{
+                    border-top: 1px solid $border-light;
+                    padding: 20px 0px ;
+                }
+            }
+        }
+        .filter2{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color: #1b1b1b40;
+            backdrop-filter: blur(1px);
+        }
+    }
+    .notificationCard{
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+        section{
+            width: 400px;
+            height: 500px;
+            background-color: rgb(47, 47, 47);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            z-index: 3;
+            border-radius: 20px;
+            gap: 20px;
+            padding: 20px;
+
+            h2{
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.261);
+            }
+            ul{
+                width: 100%;
+                text-align: start;
+            }
+        }
+        .filter3{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color: #1b1b1b40;
+            backdrop-filter: blur(1px);
+        }
+    }
+    .show{
+        display: flex;
+    }
+    .communityPosts{
+        display: flex;
+        width: 85%;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        padding-top: 100px;
+        gap: 40px;
+        section{
+            display: flex;
+            flex-direction: column;
+            border-radius: $border-r;
+            padding: 40px;
+            gap: 20px;
+            width: 60%;
+            color: $fc-light;
+            -webkit-box-shadow: 8px 8px 24px -16px rgba(20, 20, 20, 1);
+            -moz-box-shadow: 8px 8px 24px -16px rgba(20, 20, 20, 1);
+            box-shadow: 8px 8px 24px -16px rgba(20, 20, 20, 1);
+            background: #1B1B1B;
+            background: linear-gradient(321deg, rgb(18, 18, 18) 40%, rgba(26, 26, 26, 1) 100%); 
+            h2{
+                width: fit-content;
+            }
+            .user{
+                background-color: rgb(66, 76, 103);
+                width: fit-content;
+                padding: 2px 20px;
+                border-radius: $border-r;
+                color: $fc-light;
+            }
+            p{
+                color: rgb(155, 155, 155);
+            }
+            span{
+                width: 100%;
+                text-align: end;
+                font-size: $fz-sm;
+                color: rgb(139, 139, 139);
+            }
+            a{
+                color: $fc-light;
+            }
+        }
+    }
+} 

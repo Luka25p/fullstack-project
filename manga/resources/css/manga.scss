@@ -1,0 +1,112 @@
+@use 'variables.scss' as *;
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .wrapper{
+        padding-top: 20px;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        gap: 30px;
+        .details{
+            width: 286px;
+            min-height: 420px;
+            transition: .3s ease-in-out;
+            &:hover{
+                opacity: .8;
+                section{
+                    opacity: 0;
+                }
+            }
+            .card{
+                height: 100%;
+                width: 100%;
+                color: var(--fc-light);
+                border-radius: $border-r;
+                background-color:rgb(27, 27, 27);
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                gap: 10px;
+                align-items: start;
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    border-radius: $border-r;
+                    z-index: 1;
+                }
+                section{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    align-items: center;
+                    z-index: 2;
+                    padding: 20px;
+                    padding-top: 40px;
+                    transition: .3s ease-in-out;
+                    background: #000000;
+                    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 64%, rgba(255, 255, 255, 0) 100%);
+                    border-radius: 0px 0px $border-r $border-r;
+                    span{
+                        font-size: 12px;
+                    }
+                    p{
+                        width: 100%;
+                        text-transform: uppercase;
+                        font-size: 12px;
+                        z-index: 2;
+                    }
+                    h1{
+                        z-index: 2;
+                        font-size: $fz-xl;
+                        width: 100%;
+                    }
+                    div{
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 20px 0px;
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+       nav{
+        padding: 40px 0px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        a{
+            color: $fc-light;
+        }
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+        div:nth-child(1){
+            display: none;
+        }
+        div:nth-child(2){
+            p{
+                display: none;
+            }
+            div:nth-child(2){
+
+                span{
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;                    
+                }
+            }
+
+        }
+    }
+}

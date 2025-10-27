@@ -1,0 +1,71 @@
+/* text colors */
+/* text size */
+/* colors */
+/* border color */
+/* border radius */
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(185, 185, 185);
+}
+main h2 {
+  font-size: 54px;
+  color: rgb(232, 232, 232);
+}
+main form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  gap: 20px;
+  width: 500px;
+}
+main form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+main form .form-group label {
+  font-size: 14px;
+}
+main form .form-group input {
+  font-size: 20px;
+  padding: 5px 20px;
+  border-radius: 20px;
+}
+main form button {
+  cursor: pointer;
+  padding: 10px 60px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 20px;
+  font-size: 14px;
+  color: rgb(185, 185, 185);
+  background-color: transparent;
+  border: 1px solid rgba(210, 210, 210, 0.169);
+  transition: 0.3s ease-in-out;
+}
+main form button:hover {
+  background-color: rgb(185, 185, 185);
+  color: rgb(28, 28, 28);
+}
+main form .remember {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-google {
+  background: #4285F4;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.btn-google:hover {
+  background: #357ae8;
+}/*# sourceMappingURL=login.css.map */
