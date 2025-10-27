@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // create users fi
         \App\Models\User::factory(10)->create();
 
         Manga::factory(40)->create()->each(function ($manga) {
